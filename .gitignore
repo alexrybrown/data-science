@@ -65,4 +65,4 @@ target/
 *.pickle
 
 # Idea folders related to pycharm
-*/.idea/*
+.idea/*

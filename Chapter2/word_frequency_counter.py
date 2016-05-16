@@ -11,7 +11,7 @@ import urllib.request
 
 
 def main(web_page):
-    pattern = re.compile(r"\w+", re.IGNORECASE)
+    pattern = re.compile(r'\w+', re.IGNORECASE)
     try:
         with urllib.request.urlopen(web_page) as page:
             # Read, decode, and ignore case of the page
@@ -25,7 +25,7 @@ def main(web_page):
         print("Could not open {}".format(web_page), file=sys.stderr)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if len(sys.argv) == 2:
         main(sys.argv[1])
     else:

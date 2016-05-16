@@ -14,10 +14,10 @@ import sys
 def main(directory):
     # Grab everything from the directory and only keep it if it is a file
     files = [file for file in os.listdir(directory) if os.path.isfile(file)]
-    pattern = re.compile(r"\w+")
+    pattern = re.compile(r'\w+')
     pairings = dict()
     for file in files:
-        with open(file, mode="rb") as f:
+        with open(file, mode='rb') as f:
             # If a decoding error occurs just skip the file and got to the next one.
             try:
                 contents = f.read().decode().lower()
@@ -33,11 +33,11 @@ def main(directory):
                 else:
                     pairings[word] = [file]
     # Pickle the pairings for later use
-    with open("file_indexer.pickle", mode="wb") as oFile:
+    with open('file_indexer.pickle', mode='wb') as oFile:
         pickle.dump(pairings, oFile)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     if len(sys.argv) == 2:
         main(sys.argv[1])
     else:
